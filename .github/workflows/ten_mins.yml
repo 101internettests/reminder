@@ -1,0 +1,34 @@
+name: 10 mins
+
+on:
+    schedule:
+      - cron: "5 6 * * *"
+    workflow_dispatch:
+
+env:
+  BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+  CHAT_ID: ${{ secrets.CHAT_ID }}
+  CHAT_ID_101: ${{ secrets.CHAT_ID_101 }}
+  TOKEN: ${{ secrets.TOKEN }}
+  HEADLESS: ${{ secrets.HEADLESS }}
+
+
+jobs:
+  build-php:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v4.1.1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: tests
+        run: pytest tests/test_min
+        continue-on-error: true
