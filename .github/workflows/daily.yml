@@ -1,9 +1,9 @@
 name: daily
 
 on:
-    schedule:
-      - cron: "14 6 * * *"
-    workflow_dispatch:
+  schedule:
+    - cron: "14 6 * * *"
+  workflow_dispatch:
 
 env:
   BOT_TOKEN: ${{ secrets.BOT_TOKEN }}

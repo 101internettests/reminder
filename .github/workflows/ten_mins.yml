@@ -1,9 +1,9 @@
 name: 10 mins
 
 on:
-    schedule:
-      - cron: "5 6 * * *"
-    workflow_dispatch:
+  schedule:
+    - cron: "5 6 * * *"
+  workflow_dispatch:
 
 env:
   BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
