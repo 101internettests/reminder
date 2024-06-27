@@ -1,8 +1,8 @@
 name: 10 mins
 
 on:
-  schedule:
-    - cron: "5 6 * * *"
+#   schedule:
+#     - cron: "5 6 * * *"
   workflow_dispatch:
 
 env:
