@@ -2,7 +2,7 @@ name: daily
 
 on:
   schedule:
-    - cron: '15 7 * * *'
+    - cron: "40 9 * * *"
   workflow_dispatch:
 
 env:
@@ -11,6 +11,12 @@ env:
   CHAT_ID_101: ${{ secrets.CHAT_ID_101 }}
   TOKEN: ${{ secrets.TOKEN }}
   HEADLESS: ${{ secrets.HEADLESS }}
+
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 
 jobs:
